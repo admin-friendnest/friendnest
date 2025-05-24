@@ -78,5 +78,5 @@ No noise. No distractions. Just real social presence.
 
 ## 🔗 License
 
-This project is open-source under the [MIT License]([LICENSE](https://friendnest.free.nf/license.php)).  
+This project is open-source under the [MIT License](https://friendnest.free.nf/license.php).  
 Built for sharing. Fork freely. Improve collaboratively.
