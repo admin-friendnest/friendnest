@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
     $password = $_POST['password'];
     
-    $hcaptchaSecret = 'HCAPTCHA_SECRET_KEY'; // ✅ IMPORTANT
+    $hcaptchaSecret = ''; // SECRET KEY HERE
     $hcaptchaResponse = $_POST['h-captcha-response'] ?? '';
     $remoteIp = $_SERVER['REMOTE_ADDR'];
 
@@ -30,50 +30,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 
     $verifyUrl = 'https://hcaptcha.com/siteverify';
-
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $verifyUrl);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 10); // Optional: timeout
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
     $hcaptchaResult = curl_exec($ch);
-
-    if ($hcaptchaResult === false) {
-        $error = 'Captcha verification failed (cURL error).';
-    } else {
-        $responseData = json_decode($hcaptchaResult);
-        if (!$responseData || empty($responseData->success)) {
-            $error = 'Captcha verification failed. Please try again.';
-        }
-    }
     curl_close($ch);
 
-    if (!$username || !$email || !$password || !$firstName || !$lastName || !$birthday || !$gender) {
-    $error = "All fields are required.";
-    } elseif (findUserByUsername($username) || findUserByEmail($email)) {
-        $error = "Username or email already exists.";
+    $responseData = json_decode($hcaptchaResult);
+
+    if (!$hcaptchaResult || !$responseData || empty($responseData->success)) {
+        $error = 'Captcha verification failed. Please try again.';
     } else {
-        $users = loadUsers();
-        $newUser = [
-            "id" => uniqid("user"),
-            "first_name" => $firstName,
-            "last_name" => $lastName,
-            "birthday" => $birthday,
-            "gender" => $gender,
-            "username" => $username,
-            "email" => $email,
-            "password" => password_hash($password, PASSWORD_DEFAULT),
-            "disabled" => false,
-            "avatar" => "default.png",
-            "bio" => "",
-            "role" => "user",
-        ];
-        $users[] = $newUser;
-        saveUsers($users);
-        $_SESSION['user'] = $newUser;
-        header("Location: index.php");
-        exit;
+        // CAPTCHA passed — now validate form
+        if (!$username || !$email || !$password || !$firstName || !$lastName || !$birthday || !$gender) {
+            $error = "All fields are required.";
+        } elseif (findUserByUsername($username) || findUserByEmail($email)) {
+            $error = "Username or email already exists.";
+        } else {
+            $users = loadUsers();
+            $newUser = [
+                "id" => uniqid("user"),
+                "first_name" => $firstName,
+                "last_name" => $lastName,
+                "birthday" => $birthday,
+                "gender" => $gender,
+                "username" => $username,
+                "email" => $email,
+                "password" => password_hash($password, PASSWORD_DEFAULT),
+                "disabled" => false,
+                "avatar" => "default.png",
+                "bio" => "",
+                "role" => "user",
+            ];
+            $users[] = $newUser;
+            saveUsers($users);
+            $_SESSION['user'] = $newUser;
+            header("Location: index.php");
+            exit;
+        }
     }
 }
 ?>
