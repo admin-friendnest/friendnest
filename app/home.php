@@ -254,13 +254,13 @@ function validatePost() {
     </form>
     <input type="hidden" id="targetUser" value="">
     <button id="followBtn" style="margin-top:10px;padding:6px 10px;background:#007bff;color:white;border:none;border-radius:6px;font-size:13px;display:none;">Follow</button>
-    <script>
+   <script>
 document.addEventListener('DOMContentLoaded', () => {
     const popup = document.getElementById('profilePopup');
 
     document.querySelectorAll('.user-trigger').forEach(el => {
         el.addEventListener('click', async (e) => {
-            e.stopPropagation(); // Prevent click from closing immediately
+            e.stopPropagation();
 
             const username = e.currentTarget.getAttribute('data-username');
 
@@ -332,12 +332,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close popup on scroll
     window.addEventListener('scroll', () => {
-        if (popup.style.display === 'block') {
-            popup.style.display = 'none';
-        }
+        popup.style.display = 'none';
     });
-
-});
 });
 </script>
 </div>
