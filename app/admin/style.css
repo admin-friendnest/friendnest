@@ -1,0 +1,70 @@
+/* Admin Panel CSS */
+body {
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+    padding: 20px;
+}
+.auth-box {
+    background: #78b9ff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+.auth-box input, .auth-box button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 6px;
+}
+button {
+    width: 80%;
+    padding: 12px;
+    background: #ff0800;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+table {
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+th {
+    background: #007bff;
+    color: white;
+}
+header {
+    background: #78b9ff;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    margin: 5px auto;
+    max-width: 1000px;
+    position: sticky;
+    top: 1%;
+    z-index: 10;
+}
+.logo {
+    height: 40px;
+}
+nav a {
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+}

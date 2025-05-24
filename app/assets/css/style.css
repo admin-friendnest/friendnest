@@ -1,0 +1,435 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* change from default row to column */
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Centered Form Container */
+.editProfileForm, .settingsForm, .postForm {
+    width: 100%;
+    max-width: 1000px;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.formIndex {
+    width: 100%;
+    max-width: 1000px;
+    align-items: center;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+form {
+    width: 100%;
+    max-width: 1000px;
+    align-items: center;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+button.small-button {
+    width: 100%;
+    max-width: 100%;
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+a {
+    color: #6e78ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header for logged-in pages */
+header {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: #78b9ff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  max-width: 1000px;
+  width: 100%;
+  position: sticky;
+  top: 1%;
+  z-index: 1000;
+}
+
+header img.logo {
+  height: 40px;
+}
+
+.hamburger {
+  display: none;              /* Hidden by default (shown in mobile via media query) */
+  font-size: 28px;            /* Fixed size */
+  width: 40px;                /* Prevents stretching */
+  height: 40px;               /* Prevents stretching */
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+/* Navigation styles (desktop) */
+header nav.main-nav {
+  display: flex;
+  gap: 15px;
+}
+
+header nav.main-nav a.logout {
+  font-weight: bold;
+}
+
+/* Wrapper to hold logo + hamburger */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+
+    form {
+        align-items: center;
+        margin: 5px 5px;
+        padding: 10px;
+        width: 97%
+    }
+}
+
+/* Add to end of existing style.css */
+
+header nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+header nav a.logout {
+    color: #ffffff;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+}
+
+@media (max-width: 600px) {
+    header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+    .header-left {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+    .hamburger {
+    display: block;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+    header img.logo {
+    margin-right: 10px;
+    }
+
+    header nav.main-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  header nav.main-nav.open {
+    display: flex;
+  }
+
+  header nav.main-nav a {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
+
+    textarea, input, button {
+        font-size: 16px;
+    }
+
+    .post-box,
+    .sidebar {
+        width: 95%;
+        max-width: 95%;
+        margin-top: 10px;
+    }
+
+    .main-content {
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .feed-tab {
+    padding: 10px;
+    font-size: 14px;
+    }
+
+    #likersPopup {
+    max-width: 90vw;
+    word-wrap: break-word;
+    }
+}
+
+.post-box {
+    width: 100%;
+    max-width: 700px;
+    background:  #78b9ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex: 1;
+}
+
+.log-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+table {
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+th {
+    background: #007bff;
+    color: white;
+}
+
+footer a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.site-footer {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+#backToTop {
+    max-width: 30%;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease;  
+}
+
+#backToTop:hover {
+    background-color: #0056b3;
+}
+
+.pagination-btn {
+    width: 100%;
+    padding: 12px ;
+    font-size: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+    margin-bottom: 10px;
+}
+
+.pagination-btn:hover {
+    background: #0056b3;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; /* helps on smaller screens */
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 10px auto;
+}
+
+.sidebar {
+    align-items: center;
+    max-width: 360px;
+    width: 100%;
+    background:  #78b9ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex: 1;
+}
+
+.feed-toggle {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #e0e0e0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.feed-tab {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.feed-tab:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.feed-tab.active {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.feed-tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color:#007bff; /* Twitter blue */
+    border-radius: 2px 2px 0 0;
+}
+
+
+#followSuggestions button {
+    transition: background 0.2s ease;
+}
+
+#followSuggestions button:hover {
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 480px) {
+    #likersPopup {
+        max-width: 90vw;
+        width: auto;
+        font-size: 14px;
+    }
+}
+
+#profilePopup {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+#profilePopup.hide {
+    opacity: 0;
+}
+
+.news-post {
+    border-left: 5px solid #007bff;
+    background-color: #eef6ff;
+}
+.news-post a:hover {
+    text-decoration: underline;
+}
+
