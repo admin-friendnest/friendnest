@@ -172,7 +172,7 @@ if (isset($_POST['remember'])) {
 <div class="page-container">
     <div class="auth-box">
         
-        <img src="assets/images/logo.png" alt="FriendNest Logo" class="logo">
+        <a href="/"><img src="assets/images/logo.png" alt="FriendNest Logo" class="logo"></a>
         <h1>LOGIN</h1>
         <div class="formIndex">
         <form method="post">
