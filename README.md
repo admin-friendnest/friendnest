@@ -28,7 +28,7 @@ FriendNest is a lightweight open-source social network that brings back the auth
 
 ### 📅 May 27, 2025  
 - **🔐 Reset Password Page Added**  
-  We've added a simple but effective reset password page! If users forget their password, they can now reset it — as long as the email they provide matches what's already in the system.  
+  We've added a simple but effective reset password page! If users forget their password, they can now reset it — as long as the email they provide matches what's already in the system and it uses Hcaptcha for request.  
   > *Note: This reset system currently checks against existing account data rather than sending email verification. It’s a fast, no-frills way to recover access — great for internal networks or prototype stages.*
 
 ---
