@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 <header>
      <div class="header-left">
-  <a href="./home.php">
+  <a href="/">
     <img src="assets/images/logo.png" class="logo" alt="FriendNest" style="height: 40px;">
   </a>
 
@@ -12,7 +12,7 @@
 
   <!-- Navigation -->
   <nav class="main-nav" id="mainNav">
-    <a href="home.php">Home 🏠︎</a>
+    <a href="/">Home 🏠︎</a>
     <a href="profile.php">Profile ☻</a>
     <a href="settings.php">Settings ⛯</a>
     <a class="logout" href="logout.php">Logout ➜</a>
