@@ -192,7 +192,7 @@ body {
 <body>
 <div class="page-container">
     <div class="auth-box">
-        <img src="assets/images/logo.png" alt="FriendNest Logo" class="logo">
+        <a href="/"><img src="assets/images/logo.png" alt="FriendNest Logo" class="logo"></a>
         <h1>REGISTER</h1>
         <div class="formIndex">
         <form method="post">
