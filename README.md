@@ -24,6 +24,15 @@ FriendNest is a lightweight open-source social network that brings back the auth
 
 ---
 
+## 🆕 Updates
+
+### 📅 May 27, 2025  
+- **🔐 Reset Password Page Added**  
+  We've added a simple but effective reset password page! If users forget their password, they can now reset it — as long as the email they provide matches what's already in the system.  
+  > *Note: This reset system currently checks against existing account data rather than sending email verification. It’s a fast, no-frills way to recover access — great for internal networks or prototype stages.*
+
+---
+
 ## ⚙️ Project Setup & Important Notes
 
 > Before running FriendNest, make sure you configure the following:
@@ -72,11 +81,11 @@ If you see something that can be improved or optimized, we would love your contr
 
 No noise. No distractions. Just real social presence.
 
-👉 [Sign up and try it yourself](https://friendnest.free.nf/)
+👉 [Sign up and try it yourself](https://friendnest.infy.uk)
 
 ---
 
 ## 🔗 License
 
-This project is open-source under the [MIT License](https://friendnest.free.nf/license.php).  
+This project is open-source under the [MIT License](https://friendnest.infy.uk/license.php).  
 Built for sharing. Fork freely. Improve collaboratively.
